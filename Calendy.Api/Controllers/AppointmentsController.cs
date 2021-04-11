@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Calendly.Application.Features.Appointments.Queries.GetAppointmentsExport;
 using Calendly.Application.Features.Queries.GetAppointmentList;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -28,6 +29,14 @@ namespace Calendy.Api.Controllers
 
             return Ok(dtos);
 
+        }
+
+        [HttpGet("export",Name ="ExportAppointments")]
+        public async Task<FileResult> ExportAppointments()
+        {
+            var fileDto = await _mediator.Send(new GetAppointmentExportQuery());
+
+            return File(fileDto.Data, fileDto.ContentType, fileDto.AppointmentExportFileName);
         }
     }
 }
