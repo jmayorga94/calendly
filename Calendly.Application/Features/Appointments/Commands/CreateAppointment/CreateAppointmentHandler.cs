@@ -5,6 +5,7 @@ using Calendly.Application.Exceptions;
 using Calendly.Application.Models.Mail;
 using Calendly.Domain.Entities;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,12 +19,14 @@ namespace Calendly.Application.Features.Appointments.Commands.CreateAppointment
         private readonly IAsyncRepository<Appointment> _appointmentRepository;
         private readonly IMapper _mapper;
         private readonly IEmailService _emailService;
+        private readonly ILogger<CreateAppointmentHandler> _logger;
 
-        public CreateAppointmentHandler(IAsyncRepository<Appointment> appointmentRepository, IMapper mapper, IEmailService emailService)
+        public CreateAppointmentHandler(IAsyncRepository<Appointment> appointmentRepository, IMapper mapper, IEmailService emailService, ILogger<CreateAppointmentHandler> logger)
         {
             _appointmentRepository = appointmentRepository;
             _mapper = mapper;
             _emailService = emailService;
+            _logger = logger;
         }
         public async Task<Guid> Handle(CreateAppointmentCommand request, CancellationToken cancellationToken)
         {
@@ -54,7 +57,7 @@ namespace Calendly.Application.Features.Appointments.Commands.CreateAppointment
             }
             catch (Exception ex)
             {
-
+                _logger.LogError($"Mailing about appointment {appointment.Id} failed due to an error with the mail service: {ex.Message}");
             }
 
             return appointment.Id;

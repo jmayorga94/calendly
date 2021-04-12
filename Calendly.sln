@@ -23,7 +23,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendly.Domain", "Calendly
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendly.Persistance", "Calendly.Persistance\Calendly.Persistance.csproj", "{0992FECE-BB63-48EF-8A27-4D46F5903CB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendly.Infrastructure", "Calendly.Infrastructure\Calendly.Infrastructure.csproj", "{8096E6FB-98DB-4E28-80A9-F44B1096161B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendly.Infrastructure", "Calendly.Infrastructure\Calendly.Infrastructure.csproj", "{8096E6FB-98DB-4E28-80A9-F44B1096161B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendly.Application.UnitTests", "Calendly.Application.UnitTests\Calendly.Application.UnitTests.csproj", "{FE041487-B2A6-4C9C-AE20-2C0246FFE1FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendly.Persistance.IntegrationTests", "Calendly.Persistance.IntegrationTests\Calendly.Persistance.IntegrationTests.csproj", "{CDE6A17B-907F-418D-94B5-8C581127040D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendly.App", "Calendly.App\Calendly.App.csproj", "{771E7DEB-EB7F-4EF5-8325-46CFF4043F3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendly.Infrastructure.Identity", "Calendly.Infrastructure.Identity\Calendly.Infrastructure.Identity.csproj", "{69A8D05D-D7B6-410D-96D3-1FE67BCFBF4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +59,22 @@ Global
 		{8096E6FB-98DB-4E28-80A9-F44B1096161B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8096E6FB-98DB-4E28-80A9-F44B1096161B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8096E6FB-98DB-4E28-80A9-F44B1096161B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE041487-B2A6-4C9C-AE20-2C0246FFE1FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE041487-B2A6-4C9C-AE20-2C0246FFE1FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE041487-B2A6-4C9C-AE20-2C0246FFE1FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE041487-B2A6-4C9C-AE20-2C0246FFE1FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDE6A17B-907F-418D-94B5-8C581127040D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE6A17B-907F-418D-94B5-8C581127040D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE6A17B-907F-418D-94B5-8C581127040D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE6A17B-907F-418D-94B5-8C581127040D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{771E7DEB-EB7F-4EF5-8325-46CFF4043F3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{771E7DEB-EB7F-4EF5-8325-46CFF4043F3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{771E7DEB-EB7F-4EF5-8325-46CFF4043F3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{771E7DEB-EB7F-4EF5-8325-46CFF4043F3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69A8D05D-D7B6-410D-96D3-1FE67BCFBF4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A8D05D-D7B6-410D-96D3-1FE67BCFBF4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A8D05D-D7B6-410D-96D3-1FE67BCFBF4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A8D05D-D7B6-410D-96D3-1FE67BCFBF4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +89,10 @@ Global
 		{D2485BEE-31C2-4038-9EFB-79353E9823EF} = {3C4E63CD-3BED-4417-A501-1534B020D805}
 		{0992FECE-BB63-48EF-8A27-4D46F5903CB0} = {D4DA90B6-06D6-4D9E-A5C8-C5C0D92CEA42}
 		{8096E6FB-98DB-4E28-80A9-F44B1096161B} = {D4DA90B6-06D6-4D9E-A5C8-C5C0D92CEA42}
+		{FE041487-B2A6-4C9C-AE20-2C0246FFE1FB} = {4E6F49AB-9222-4C3B-A4DA-4D90237C375C}
+		{CDE6A17B-907F-418D-94B5-8C581127040D} = {4E6F49AB-9222-4C3B-A4DA-4D90237C375C}
+		{771E7DEB-EB7F-4EF5-8325-46CFF4043F3B} = {E19B25DA-CD32-4915-8E20-1370C5AFEEEB}
+		{69A8D05D-D7B6-410D-96D3-1FE67BCFBF4F} = {D4DA90B6-06D6-4D9E-A5C8-C5C0D92CEA42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {02659BB3-23A2-4788-8301-34468592B334}

@@ -14,12 +14,18 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.2" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.1.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Calendly.Application\Calendly.Application.csproj" />
+    <ProjectReference Include="..\Calendly.Infrastructure.Identity\Calendly.Infrastructure.Identity.csproj" />
     <ProjectReference Include="..\Calendly.Infrastructure\Calendly.Infrastructure.csproj" />
     <ProjectReference Include="..\Calendly.Persistance\Calendly.Persistance.csproj" />
   </ItemGroup>

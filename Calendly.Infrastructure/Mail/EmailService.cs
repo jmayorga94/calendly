@@ -1,5 +1,6 @@
 ﻿using Calendly.Application.Contracts.Infrastructure;
 using Calendly.Application.Models.Mail;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SendGrid;
 using SendGrid.Helpers.Mail;
@@ -13,10 +14,11 @@ namespace Calendly.Infrastructure.Mail
     public class EmailService : IEmailService
     {
         private EmailSettings _emailSettings { get; }
-
-        public EmailService(IOptions<EmailSettings> mailSettings)
+        ILogger<EmailService> _logger { get; }
+        public EmailService(IOptions<EmailSettings> mailSettings, ILogger<EmailService> logger)
         {
             _emailSettings = mailSettings.Value;
+            _logger = logger;
         }
         public async Task<bool> SendEmail(Email email)
         {
@@ -36,8 +38,12 @@ namespace Calendly.Infrastructure.Mail
 
             var response = await client.SendEmailAsync(sendGridMessage);
 
+            _logger.LogInformation("Email sent");
+
             if (response.StatusCode == System.Net.HttpStatusCode.Accepted || response.StatusCode == System.Net.HttpStatusCode.OK)
                 return true;
+
+            _logger.LogError("Email sending failed");
 
             return false;
         }

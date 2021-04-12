@@ -11,7 +11,7 @@ namespace Calendly.Persistance
 {
     public class CalendlyDbContext :DbContext
     {
-        public CalendlyDbContext(DbContextOptions options) : base(options)
+        public CalendlyDbContext(DbContextOptions<CalendlyDbContext> options) : base(options)
         {
 
         }

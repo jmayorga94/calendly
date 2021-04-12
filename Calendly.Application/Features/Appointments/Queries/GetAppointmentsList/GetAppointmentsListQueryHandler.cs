@@ -15,11 +15,10 @@ namespace Calendly.Application.Features.Queries.GetAppointmentList
         private readonly IAsyncRepository<Office> _officeRepository;
         private readonly IMapper _mapper;
 
-        public GetAppointmentsListQueryHandler(IMapper mapper, IAsyncRepository<Appointment> appointmentRepository, IAsyncRepository<Office> officeRepository)
+        public GetAppointmentsListQueryHandler(IMapper mapper, IAsyncRepository<Appointment> appointmentRepository)
         {
             _mapper = mapper;
             _appointmentRepository = appointmentRepository;
-            _officeRepository = officeRepository;
 
         }
         public async Task<List<AppointmentList>> Handle(GetAppointmentListQuery request, CancellationToken cancellationToken)
